@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Switch, NavLink, Route } from 'react-router-dom'
+
+import Weather from './components/Weather'
+
+import './App.css'
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="container contheader">
+          <ul>
+          <li><NavLink activeClassName="active" to="/">Weather</NavLink></li>
+          </ul>
+        </div>
+        
+        
       </header>
-    </div>
-  );
+      <div className="container text-center">
+        <Switch>
+          <Route exact path="/">
+            <Weather />
+          </Route>
+          <Route path="*">
+            <h1>404 - Not Found</h1>
+          </Route>
+        </Switch>
+      </div>
+      
+    </Router>
+  )
 }
 
 export default App;
