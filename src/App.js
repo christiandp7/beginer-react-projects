@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, NavLink, Route } from 'react-router-do
 import Weather from './components/Weather'
 import Canvas from './components/Canvas'
 import User from './components/User'
+import Map from './components/Map'
 
 import './App.css'
 
@@ -29,6 +30,11 @@ function App() {
                 Random User
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" activeClassName="active" to="/map">
+                Map
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>
@@ -43,6 +49,9 @@ function App() {
           </Route>
           <Route exact path="/user"> 
             <User />
+          </Route>
+          <Route exact path="/map"> 
+            <Map />
           </Route>
           <Route path="*">
             <h1>404 - Not Found</h1>

@@ -1,5 +1,5 @@
 .weather-app {
-    background-image: url('./cold-bg.jpg');
+    background-image: url('../images/cold-bg.jpg');
     background-size: cover;
     background-position: bottom;
     max-width: 380px;
@@ -9,7 +9,7 @@
 
 
 .weather-app.warm {
-    background-image: url('./warm-bg.jpg');
+    background-image: url('../images/warm-bg.jpg');
 }
 
 main {

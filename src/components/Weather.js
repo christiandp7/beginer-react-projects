@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../assets/Weather.css'
+import '../assets/css/Weather.css'
 
 const api = {
   key: 'b20f7d5bc077e68d67316244fdc560ef',
