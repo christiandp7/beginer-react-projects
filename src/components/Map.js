@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
+
 import BoliviaMap from './BoliviaMap'
 import WorldMap from './WorldMap'
+import SouthamericaMap from './SouthamericaMap'
 
 
 export class Map extends Component {
@@ -14,7 +16,7 @@ export class Map extends Component {
           </div>
           <div className="col-md-6">
             <h2 className="text-center">Sudamérica</h2>
-
+            <SouthamericaMap />
           </div>
           <div className="col-md-12">
             <h2 className="text-center">World</h2>
