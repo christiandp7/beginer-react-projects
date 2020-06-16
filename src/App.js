@@ -5,6 +5,8 @@ import Weather from './components/Weather'
 import Canvas from './components/Canvas'
 import User from './components/User'
 import Map from './components/Map'
+import Usestate from './components/UseState'
+import Useeffect from './components/UseEffect'
 
 import './App.css'
 
@@ -35,6 +37,16 @@ function App() {
                 Map
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" activeClassName="active" to="/usestate">
+                UseState
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" activeClassName="active" to="/useeffect">
+                UseEffect
+              </NavLink>
+            </li>
           </ul>
         </div>
       </nav>
@@ -52,6 +64,12 @@ function App() {
           </Route>
           <Route exact path="/map"> 
             <Map />
+          </Route>
+          <Route exact path="/usestate"> 
+            <Usestate />
+          </Route>
+          <Route exact path="/useeffect"> 
+            <Useeffect />
           </Route>
           <Route path="*">
             <h1>404 - Not Found</h1>
