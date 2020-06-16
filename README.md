@@ -1,4 +1,8 @@
-This project it's a collection of begginer react projects
+This project it's a collection of beginner react projects:
+- Weather app
+- Random User
+- Canvas
+- Vector Maps
 
 ## Install
 
