@@ -29,8 +29,9 @@ import {
 } from 'reactstrap';
 
 
-
+import './assets/scss/index.scss'
 import './App.css'
+
 
 function App() {
 

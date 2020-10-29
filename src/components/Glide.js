@@ -1,28 +1,49 @@
-import React from 'react'
-import Glidejs, { Controls, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm'
+import React, { useState, useEffect } from 'react'
+//import Glidejs, { Controls, Breakpoints } from '@glidejs/glide/dist/glide.modular.esm'
+import Glidejs from '@glidejs/glide'
 
 
 
 function Glide() {
 
-  //new Glidejs('.glide').mount({ Controls, Breakpoints })
+  useEffect(() => {
+    const glide = new Glidejs(".glide", {
+      peek: 50,
+      perView: 3,
+      type: "carousel",
+      //autoplay: 4000,
+      focusAt: 3,
+      direction: 'rtl'
+    });
+    glide.mount();
+    return () => {
+      console.log("glide unmounted")
+      glide.destroy();
+    }
+  })
+
+  
 
   return (
-    <>
-    <div class="glide">
+    <div class="glide multi">
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left btn btn-primary" data-glide-dir=">">
+          Prev
+        </button>
+      </div>
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
-          <li class="glide__slide">0</li>
           <li class="glide__slide">1</li>
           <li class="glide__slide">2</li>
+          <li class="glide__slide">3</li>
         </ul>
       </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--right btn btn-primary" data-glide-dir="<">
+          Next
+        </button>
+      </div>
     </div>
-    <div data-glide-el="controls">
-      <button data-glide-dir="<<">Start</button>
-      <button data-glide-dir=">>">End</button>
-    </div>
-    </>
   )
 }
 
