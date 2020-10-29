@@ -16,8 +16,8 @@ export class User extends Component {
 
   
 
-  componentDidMount(){
-    fetch(`https://randomuser.me/api/?results=${resNumber}`)
+  async componentDidMount(){
+    await fetch(`https://randomuser.me/api/?results=${resNumber}`)
       .then(resp => resp.json())
       .then(resp => {
 
@@ -51,7 +51,7 @@ export class User extends Component {
           <div className="row">
 
           {items.map(item => (
-            <div className="col-md-3">
+            <div className="col-md-3" key={item.login.uuid}>
 
               <div className="card">
                 <img className="card-img-top" src={item.picture.large} alt={item.name.first} />

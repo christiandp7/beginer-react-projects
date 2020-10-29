@@ -18,3 +18,11 @@ body {
 .mt-10 {
   margin-top: 10px;
 }
+
+.online-text {
+  color: #2dce89;
+}
+
+.offline-text {
+  color: #db3630;
+}

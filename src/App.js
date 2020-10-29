@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter as Router, Switch, NavLink, Route } from 'react-router-dom'
+import React, { useState } from 'react'
+import { BrowserRouter as Router, Switch, NavLink as Link, Route } from 'react-router-dom'
 
 import Weather from './components/Weather'
 import Canvas from './components/Canvas'
@@ -7,49 +7,86 @@ import User from './components/User'
 import Map from './components/Map'
 import Usestate from './components/UseState'
 import Useeffect from './components/UseEffect'
+import ReactBootstrapTable from './components/ReactBootstrapTable'
+import Glide from './components/Glide'
+
+import DetectOffline from './components/services/DetectOffline'
+
+
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  UncontrolledDropdown,
+  DropdownToggle,
+  DropdownMenu,
+  DropdownItem,
+  NavbarText
+} from 'reactstrap';
+
+
 
 import './App.css'
 
 function App() {
+
+  const [isOpen, setIsOpen] = useState(false);
+  const toggle = () => setIsOpen(!isOpen);
+
   return (
     <Router>
 
-      <nav className="navbar navbar-expand-lg navbar-dark  bg-primary">
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" exact to="/">
+      <Navbar color="primary" dark expand="lg">
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className="mr-auto" navbar>
+            <NavItem>
+              <Link className="nav-link" activeClassName="active" exact to="/">
                 Weather
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="/canvas">
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link className="nav-link" activeClassName="active" to="/canvas">
                 Canvas
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="/user">
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link className="nav-link" activeClassName="active" to="/user">
                 Random User
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="/map">
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link className="nav-link" activeClassName="active" to="/map">
                 Map
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="/usestate">
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link className="nav-link" activeClassName="active" to="/usestate">
                 UseState
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" activeClassName="active" to="/useeffect">
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link className="nav-link" activeClassName="active" to="/useeffect">
                 UseEffect
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-      </nav>
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link className="nav-link" activeClassName="active" to="/reactbootstraptable">
+                Table
+              </Link>
+            </NavItem>
+            <NavItem>
+              <Link className="nav-link" activeClassName="active" to="/glide">
+                Glide
+              </Link>
+            </NavItem>
+          </Nav>
+          <DetectOffline />
+        </Collapse>
+      </Navbar>
 
       <div className="container text-center">
         <Switch>
@@ -70,6 +107,12 @@ function App() {
           </Route>
           <Route exact path="/useeffect"> 
             <Useeffect />
+          </Route>
+          <Route exact path="/reactbootstraptable"> 
+            <ReactBootstrapTable />
+          </Route>
+          <Route exact path="/glide"> 
+            <Glide />
           </Route>
           <Route path="*">
             <h1>404 - Not Found</h1>
