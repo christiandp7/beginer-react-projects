@@ -17,7 +17,7 @@ function Glide() {
     });
     glide.mount();
     return () => {
-      console.log("glide unmounted")
+      //console.log("glide unmounted")
       glide.destroy();
     }
   })
