@@ -38,6 +38,8 @@ function Glide() {
           <li class="glide__slide">1</li>
           <li class="glide__slide">2</li>
           <li class="glide__slide">3</li>
+          <li class="glide__slide">4</li>
+          <li class="glide__slide">5</li>
         </ul>
       </div>
       <div class="glide__arrows" data-glide-el="controls">
