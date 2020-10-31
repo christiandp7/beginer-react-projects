@@ -8,7 +8,6 @@ function Glide() {
 
   useEffect(() => {
     const glide = new Glidejs(".glide", {
-      /*peek: 50,*/
       peek: { before: 0, after: 70 },
       perView: 3,
       type: "carousel",
