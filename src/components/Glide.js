@@ -8,11 +8,13 @@ function Glide() {
 
   useEffect(() => {
     const glide = new Glidejs(".glide", {
-      peek: 50,
+      /*peek: 50,*/
+      peek: { before: 0, after: 70 },
       perView: 3,
       type: "carousel",
+      gap: 20,
       //autoplay: 4000,
-      focusAt: 3,
+      //focusAt: 3,
       direction: 'rtl'
     });
     glide.mount();
@@ -27,9 +29,9 @@ function Glide() {
   return (
     <div class="glide multi">
       <div class="glide__arrows" data-glide-el="controls">
-        <button class="glide__arrow glide__arrow--left btn btn-primary" data-glide-dir=">">
+        {/*<button class="glide__arrow glide__arrow--left btn btn-primary" data-glide-dir=">">
           Prev
-        </button>
+  </button>*/}
       </div>
       <div class="glide__track" data-glide-el="track">
         <ul class="glide__slides">
@@ -39,9 +41,12 @@ function Glide() {
         </ul>
       </div>
       <div class="glide__arrows" data-glide-el="controls">
-        <button class="glide__arrow glide__arrow--right btn btn-primary" data-glide-dir="<">
+      <button class="glide__arrow glide__arrow--right btn btn-primary" data-glide-dir="<">
           Next
-        </button>
+      </button>
+        {/*<button class="glide__arrow glide__arrow--right btn btn-primary" data-glide-dir="<">
+          Next
+  </button>*/}
       </div>
     </div>
   )
