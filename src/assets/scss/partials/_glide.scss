@@ -24,6 +24,9 @@
       //@include transform-scale(1.5);
       height: 200px;
     }
+    &.activated {
+      height: 200px;
+    }
   }
 }
 
